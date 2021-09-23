@@ -1,11 +1,18 @@
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/Cellar/openvpn/2.4.0/sbin:/Users/ghost/Projects/make-checkin:/usr/local/sbin:/usr/local/Cellar/openvpn/2.4.7/sbin:/Users/ghost/bin:/usr/local/bin:/usr/local/Cellar/openvpn/2.4.0/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/MacGPG2/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin:/Users/ghost/Projects/pyCommit:/Users/ghost/go/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:~/go/bin:~/.cargo/bin:~/jetbrains:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ghost/.oh-my-zsh"
-# go path
+
+# Go path
 export GOPATH="/Users/ghost/go"
-export PATH="/usr/local/Cellar/openvpn/2.4.7/sbin":$PATH
+export GOROOT="/usr/local/Cellar/go/1.16.3/libexec"
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -70,7 +77,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-nvm pep8 django)
+plugin+=(git zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 # nvm
@@ -102,12 +109,9 @@ export NVM_DIR="$HOME/.nvm"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias change="code-insiders ~/.zshrc"
-alias update="source ~/.zshrc"
-alias p="python3"
-alias pycommit="console.py"
   # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+  # autoload -U promptinit; promptinit
+  # prompt spaceship
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -115,3 +119,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/sbin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

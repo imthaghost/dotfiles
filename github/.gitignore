@@ -1,0 +1,7 @@
+# Global Ignore File #
+
+# OSX Stuff
+**/.DS_Store
+
+# Jetbrains Stuff
+**/.idea
