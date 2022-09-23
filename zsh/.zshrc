@@ -1,17 +1,22 @@
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:~/go/bin:~/.cargo/bin:~/jetbrains:$PATH
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ghost/.oh-my-zsh"
 
 # Go path
 export GOPATH="/Users/ghost/go"
-export GOROOT="/usr/local/Cellar/go/1.16.3/libexec"
+export GOROOT="/usr/local/Cellar/go/1.19.1/libexec"
 
+#Gem path
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+# Clip
+export DISPLAY=:0
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,6 +114,8 @@ export NVM_DIR="$HOME/.nvm"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias change="code-insiders ~/.zshrc"
+alias clip="pbcopy"
+
   # Set Spaceship ZSH as a prompt
   # autoload -U promptinit; promptinit
   # prompt spaceship
@@ -121,7 +128,5 @@ export PATH="/usr/local/sbin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
